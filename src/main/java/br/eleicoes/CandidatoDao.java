@@ -10,6 +10,10 @@ public class CandidatoDao {
 
     private List<Candidato> lista = new ArrayList<>();
 
+    public List<Candidato> getLista() {
+        return lista;
+    }
+
     public CandidatoDao() {
         Candidato c = new Candidato();
         c.setNome("Fabio");
@@ -31,5 +35,9 @@ public class CandidatoDao {
 
     public List<Candidato> buscarCandidatos() {
         return lista;
+    }
+
+    public String votar(Voto v) {
+        return v.getNotificacaoVoto();
     }
 }

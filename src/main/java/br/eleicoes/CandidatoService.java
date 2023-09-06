@@ -24,4 +24,16 @@ public class CandidatoService {
     public List<Candidato> buscarCandidatos() {
         return dao.buscarCandidatos();
     }
+
+    public String votar(Voto v) {
+        for(Candidato candidatos : dao.getLista()) {
+            if(candidatos.getNome().matches(v.getCandidato())) {
+                candidatos.setNumeroVotos(v.getVotos()+candidatos.getNumeroVotos());
+                v.setNotificacaoVoto("Voto para o candidato "+v.getCandidato()+" realizado com sucesso");
+                return dao.votar(v);
+            }
+        }
+        v.setNotificacaoVoto("Candidato não encontrado");
+        return dao.votar(v);
+    }
 }

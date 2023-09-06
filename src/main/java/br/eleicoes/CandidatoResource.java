@@ -38,5 +38,10 @@ public class CandidatoResource {
         return service.adicionar(c);
     }
 
-    
+    @Path("/votar")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public String votar(Voto v){
+        return service.votar(v);
+    }
 }

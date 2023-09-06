@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "9d2275aa-e1f8-47fa-89e4-8e3a33d7d01c",
+		"name": "Api-eleicoes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15869571"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7080/api/candidatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7080",
+					"path": [
+						"api",
+						"candidatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idade\": 52,\r\n    \"nome\": \"Ana\",\r\n    \"numeroVotos\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7080/api/candidato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7080",
+					"path": [
+						"api",
+						"candidato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7080/api/candidato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"candidato\": \"Ana\",\r\n    \"votos\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7080/api/votar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7080",
+					"path": [
+						"api",
+						"votar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
