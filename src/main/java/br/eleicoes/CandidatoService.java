@@ -29,11 +29,21 @@ public class CandidatoService {
         for(Candidato candidatos : dao.getLista()) {
             if(candidatos.getNome().matches(v.getCandidato())) {
                 candidatos.setNumeroVotos(v.getVotos()+candidatos.getNumeroVotos());
-                v.setNotificacaoVoto("Voto para o candidato "+v.getCandidato()+" realizado com sucesso");
-                return dao.votar(v);
+                return dao.votar("Voto para o candidato "+v.getCandidato()+" realizado com sucesso");
             }
         }
-        v.setNotificacaoVoto("Candidato não encontrado");
-        return dao.votar(v);
+        return dao.votar("Candidato não encontrado");
+    }
+
+    public String apagar(Candidato c) {
+        int posicao = 0;
+        for(Candidato candidatos : dao.getLista()) {
+            if(candidatos.getNome().matches(c.getNome())) {
+                dao.getLista().remove(posicao);
+                return dao.apagar("O candidato "+c.getNome()+" foi apagado");
+            }
+            posicao +=1;
+        }
+        return dao.apagar("Candidato não encontrado");
     }
 }

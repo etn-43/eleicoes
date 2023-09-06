@@ -8,11 +8,13 @@ import java.util.List;
 @ApplicationScoped
 public class CandidatoDao {
 
-    private List<Candidato> lista = new ArrayList<>();
-
     public List<Candidato> getLista() {
         return lista;
     }
+
+
+    private List<Candidato> lista = new ArrayList<>();
+
 
     public CandidatoDao() {
         Candidato c = new Candidato();
@@ -37,7 +39,11 @@ public class CandidatoDao {
         return lista;
     }
 
-    public String votar(Voto v) {
-        return v.getNotificacaoVoto();
+    public String votar(String v) {
+        return v;
+    }
+
+    public String apagar(String s) {
+        return  s;
     }
 }

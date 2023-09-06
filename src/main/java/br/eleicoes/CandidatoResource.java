@@ -1,10 +1,7 @@
 package br.eleicoes;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.ArrayList;
@@ -12,7 +9,7 @@ import java.util.List;
 
 @Path("/api")
 public class CandidatoResource {
-    private List<Candidato> candidatos = new ArrayList<>();
+
     @Inject
     CandidatoService service;
 
@@ -36,6 +33,13 @@ public class CandidatoResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Candidato adicionar(Candidato c) {
         return service.adicionar(c);
+    }
+
+    @Path("/candidato")
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    public String apagar(Candidato c) {
+        return service.apagar(c);
     }
 
     @Path("/votar")

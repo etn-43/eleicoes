@@ -4,15 +4,6 @@ public class Voto {
 
     private String candidato;
     private int votos;
-    private String notificacaoVoto;
-
-    public String getNotificacaoVoto() {
-        return notificacaoVoto;
-    }
-
-    public void setNotificacaoVoto(String notificacaoVoto) {
-        this.notificacaoVoto = notificacaoVoto;
-    }
 
     public String getCandidato() {
         return candidato;
