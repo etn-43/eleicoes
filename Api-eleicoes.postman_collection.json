@@ -62,7 +62,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"candidato\": \"Ana\",\r\n    \"votos\": 2\r\n}",
+					"raw": "{\r\n    \"candidato\": \"Fabio\",\r\n    \"votos\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,6 +79,35 @@
 					"path": [
 						"api",
 						"votar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7080/api/candidatos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Fabio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7080/api/candidato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7080",
+					"path": [
+						"api",
+						"candidato"
 					]
 				}
 			},
